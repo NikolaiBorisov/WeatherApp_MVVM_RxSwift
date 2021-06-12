@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tKP-b4-2da">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Favourites View Controller-->
+        <scene sceneID="kpf-CW-fLK">
+            <objects>
+                <viewController storyboardIdentifier="FavoritesViewController" id="tKP-b4-2da" customClass="FavouritesViewController" customModule="Weather_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d2M-OR-pmp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wsk-S3-cuY">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="tKP-b4-2da" id="WfI-IE-Ouq"/>
+                                    <outlet property="delegate" destination="tKP-b4-2da" id="tA6-SF-krb"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dzo-xA-bGP"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dzo-xA-bGP" firstAttribute="bottom" secondItem="Wsk-S3-cuY" secondAttribute="bottom" id="D7v-3V-XZR"/>
+                            <constraint firstItem="Wsk-S3-cuY" firstAttribute="top" secondItem="dzo-xA-bGP" secondAttribute="top" id="Ly6-Uk-NZK"/>
+                            <constraint firstItem="dzo-xA-bGP" firstAttribute="trailing" secondItem="Wsk-S3-cuY" secondAttribute="trailing" id="PMh-Kr-Uk2"/>
+                            <constraint firstItem="Wsk-S3-cuY" firstAttribute="leading" secondItem="dzo-xA-bGP" secondAttribute="leading" id="cQj-AH-F1g"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tgT-7J-cfZ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="i2i-IZ-Ahx">
+                            <connections>
+                                <action selector="onAddButtonPressed:" destination="tKP-b4-2da" id="xh1-Ah-RQx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="Wsk-S3-cuY" id="9zp-Ax-yci"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="la8-nI-CVE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-138" y="240"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

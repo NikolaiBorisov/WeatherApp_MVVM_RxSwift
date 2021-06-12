@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T5Q-gE-cf9">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Weather_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="pfe-40-6Jj">
+                                <rect key="frame" x="15" y="301" width="384" height="206"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search..." textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQR-vr-ZHO">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="eMe-Bc-4no"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="bfM-3B-HW0">
+                                        <rect key="frame" x="0.0" y="52" width="384" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mo-vG-i0v" customClass="WAButton" customModule="Weather_App" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="191" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="ylN-az-k9w"/>
+                                                </constraints>
+                                                <state key="normal" title="Location"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onLocationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="abv-Hl-FOH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2PT-20-y0d" customClass="WAButton" customModule="Weather_App" customModuleProvider="target">
+                                                <rect key="frame" x="193" y="0.0" width="191" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Vnz-n7-1yJ"/>
+                                                </constraints>
+                                                <state key="normal" title="Search"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onSearchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qp3-gT-dpW"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPo-Ci-4fh" customClass="WAButton" customModule="Weather_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="104" width="384" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="EPm-vR-5zm"/>
+                                        </constraints>
+                                        <state key="normal" title="Map"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onMapButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cao-9t-7wG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bH5-Lo-aeb" customClass="WAButton" customModule="Weather_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="156" width="384" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="aOP-bi-Si1"/>
+                                        </constraints>
+                                        <state key="normal" title="Favorites"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onFavoritesButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KDx-FY-7zo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWt-QW-ndh">
+                                <rect key="frame" x="195" y="216" width="24" height="55"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NNL-vZ-t7F">
+                                <rect key="frame" x="15" y="512" width="384" height="257"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D4s-0A-Bql">
+                                <rect key="frame" x="147" y="88.5" width="120" height="119.5"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="8FF-0s-73R"/>
+                                    <constraint firstAttribute="height" constant="119.5" id="OC5-xY-ozU"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="NNL-vZ-t7F" firstAttribute="top" secondItem="pfe-40-6Jj" secondAttribute="bottom" constant="5" id="45I-7m-74I"/>
+                            <constraint firstItem="gWt-QW-ndh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OEb-7f-Xp1"/>
+                            <constraint firstItem="gWt-QW-ndh" firstAttribute="top" secondItem="D4s-0A-Bql" secondAttribute="bottom" constant="8" symbolic="YES" id="OYA-XA-znh"/>
+                            <constraint firstItem="pfe-40-6Jj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WF6-Xl-oOt"/>
+                            <constraint firstItem="NNL-vZ-t7F" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-5" id="XKh-ip-fGb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NNL-vZ-t7F" secondAttribute="trailing" constant="15" id="bKP-BC-tFc"/>
+                            <constraint firstItem="NNL-vZ-t7F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="dnj-wi-b1u"/>
+                            <constraint firstItem="pfe-40-6Jj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="f35-1q-qfH"/>
+                            <constraint firstItem="pfe-40-6Jj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gH8-Em-QZ7"/>
+                            <constraint firstItem="pfe-40-6Jj" firstAttribute="top" secondItem="gWt-QW-ndh" secondAttribute="bottom" constant="30" id="j6P-aF-rMd"/>
+                            <constraint firstItem="D4s-0A-Bql" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qj8-LM-fPP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="H19-yN-O8C"/>
+                    <connections>
+                        <outlet property="conditionImageView" destination="D4s-0A-Bql" id="iKo-Ee-puf"/>
+                        <outlet property="gifView" destination="NNL-vZ-t7F" id="jqC-FZ-jR1"/>
+                        <outlet property="temperatureLabel" destination="gWt-QW-ndh" id="bLm-Ou-SeC"/>
+                        <outlet property="textField" destination="CQR-vr-ZHO" id="txV-EN-JMJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="103.79464285714285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oq5-tJ-5xG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="T5Q-gE-cf9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4HD-Rz-489">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemTealColor"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="AAa-RB-TEn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pZ3-Wx-dPj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="326" y="104"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="2PT-20-y0d">
+            <size key="intrinsicContentSize" width="48" height="30"/>
+        </designable>
+        <designable name="4mo-vG-i0v">
+            <size key="intrinsicContentSize" width="59" height="30"/>
+        </designable>
+        <designable name="bH5-Lo-aeb">
+            <size key="intrinsicContentSize" width="62" height="30"/>
+        </designable>
+        <designable name="oPo-Ci-4fh">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nKM-xx-Uvf">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="TMV-gz-94s">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="nKM-xx-Uvf" customClass="MapViewController" customModule="Weather_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wxE-2o-PSK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NzN-iy-oRg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="b4q-Jx-kFE">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="nKM-xx-Uvf" id="YNz-00-yhc"/>
+                                        </connections>
+                                    </mapView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUZ-ER-AlL">
+                                        <rect key="frame" x="35" y="70" width="25" height="24"/>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="x.circle.fill" catalog="system" symbolScale="large"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onCloseButtonPressed:" destination="nKM-xx-Uvf" eventType="touchUpInside" id="oDk-mJ-Yb0"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZD3-2o-m1o">
+                                        <rect key="frame" x="195" y="71.5" width="24" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wtb-ac-6xS">
+                                        <rect key="frame" x="202" y="443" width="10" height="10"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="PCX-TK-w5T"/>
+                                            <constraint firstAttribute="width" constant="10" id="Wjy-8w-bs3"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0w-M8-cqi" customClass="WAButton" customModule="Weather_App" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="776" width="382" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="B5R-b6-tQa"/>
+                                        </constraints>
+                                        <state key="normal" title="Done"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onSelectButtonPressed:" destination="nKM-xx-Uvf" eventType="touchUpInside" id="aV6-zk-GK1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="b4q-Jx-kFE" secondAttribute="bottom" id="2Ue-q0-wbI"/>
+                                    <constraint firstItem="wUZ-ER-AlL" firstAttribute="top" secondItem="NzN-iy-oRg" secondAttribute="top" constant="70" id="4n0-EC-HgD"/>
+                                    <constraint firstItem="G0w-M8-cqi" firstAttribute="leading" secondItem="NzN-iy-oRg" secondAttribute="leading" constant="16" id="EQp-Hr-LIs"/>
+                                    <constraint firstItem="b4q-Jx-kFE" firstAttribute="leading" secondItem="NzN-iy-oRg" secondAttribute="leading" id="Qwx-gd-NeM"/>
+                                    <constraint firstItem="b4q-Jx-kFE" firstAttribute="top" secondItem="NzN-iy-oRg" secondAttribute="top" id="UbC-O7-nFE"/>
+                                    <constraint firstItem="ZD3-2o-m1o" firstAttribute="centerX" secondItem="NzN-iy-oRg" secondAttribute="centerX" id="Um4-Y4-ID7"/>
+                                    <constraint firstAttribute="trailing" secondItem="G0w-M8-cqi" secondAttribute="trailing" constant="16" id="bLO-m9-sNd"/>
+                                    <constraint firstItem="ZD3-2o-m1o" firstAttribute="centerY" secondItem="wUZ-ER-AlL" secondAttribute="centerY" id="ckm-dG-63U"/>
+                                    <constraint firstItem="wtb-ac-6xS" firstAttribute="centerX" secondItem="NzN-iy-oRg" secondAttribute="centerX" id="f6c-uD-hqJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="G0w-M8-cqi" secondAttribute="bottom" constant="60" id="nHV-BZ-5t8"/>
+                                    <constraint firstItem="wUZ-ER-AlL" firstAttribute="leading" secondItem="NzN-iy-oRg" secondAttribute="leading" constant="35" id="oEA-4F-2lg"/>
+                                    <constraint firstItem="wtb-ac-6xS" firstAttribute="centerY" secondItem="NzN-iy-oRg" secondAttribute="centerY" id="vxe-Ku-wzZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="b4q-Jx-kFE" secondAttribute="trailing" id="ylD-to-I4a"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="P5b-V2-nZW"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="NzN-iy-oRg" secondAttribute="bottom" id="KVt-gc-MBf"/>
+                            <constraint firstItem="NzN-iy-oRg" firstAttribute="top" secondItem="wxE-2o-PSK" secondAttribute="top" id="Rva-JW-WYJ"/>
+                            <constraint firstItem="NzN-iy-oRg" firstAttribute="leading" secondItem="wxE-2o-PSK" secondAttribute="leading" id="mUl-yk-CSo"/>
+                            <constraint firstAttribute="trailing" secondItem="NzN-iy-oRg" secondAttribute="trailing" id="v3X-Iw-8vd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="coordinateLabel" destination="ZD3-2o-m1o" id="sZn-Si-zfQ"/>
+                        <outlet property="mapView" destination="b4q-Jx-kFE" id="Hlp-9R-4hE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wZp-c0-jxk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44.927536231884062" y="-42.1875"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="G0w-M8-cqi">
+            <size key="intrinsicContentSize" width="37" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="x.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
